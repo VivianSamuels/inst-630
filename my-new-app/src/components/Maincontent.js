@@ -5,10 +5,10 @@ import Clones from '../images/AttackClones.jpg';
 import Phantom from '../images/PhantomMenance.jpg';
 import Sith from '../images/RevengeSith.jpg';
 
-function Maincontent {
+function Maincontent () {
     return (
         <div className="main-container">
-            <div id="bg-image"><img src={Background} alt="an image of stars in a night sky"/></div>
+            <div id="bg-image"><img src={Background} alt="stars in a night sky"/></div>
 
             <div className="movie1">
                 <img src={Phantom} alt="Phantom Menance movie poster"/>

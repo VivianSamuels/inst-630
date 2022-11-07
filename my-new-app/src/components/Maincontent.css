@@ -1,7 +1,3 @@
-.main-container{
-    width: 100%;
-}
-
-.main-content #bg-image {
-    overflow: hidden;
+#bg-image {
+    width: 300px;
 }
