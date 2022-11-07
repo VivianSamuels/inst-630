@@ -4,10 +4,10 @@ import './Navbar.css';
 
 function Navbar() {
     return (
-        <div class="nav-container">
+        <div className="nav-container">
             <nav>
                 <div id="logo"><img src={Logo} alt="Star Wars Logo"/> </div>
-                    <ul class ="nav-buttons">
+                    <ul className ="nav-buttons">
                         <li>The Phantom Menance</li>
                         <li>Attack of the Clones</li>
                         <li>Revenger of the Sith</li>
@@ -17,4 +17,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default Navbar;
