@@ -1,6 +1,6 @@
-import React from 'react'
-import Logo from '../images/starWarsLogo.png'
-import './Navbar.css'
+import React from 'react';
+import Logo from '../images/starWarsLogo.png';
+import './Navbar.css';
 
 function Navbar() {
     return (
