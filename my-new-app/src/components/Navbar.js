@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <div class="nav-container">
             <nav>
-                <div id="logo"><img src={Logo}/> </div>
+                <div id="logo"><img src={Logo} alt="Star Wars Logo"/> </div>
                 <div>
                     <ul class ="nav-buttons">
                         <li>The Phantom Menance</li>
@@ -18,3 +18,5 @@ function Navbar() {
         </div>
     )
 }
+
+export default Navbar
