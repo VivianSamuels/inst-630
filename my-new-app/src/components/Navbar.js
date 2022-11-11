@@ -10,7 +10,7 @@ function Navbar() {
                     <ul className ="nav-buttons">
                         <li>The Phantom Menance</li>
                         <li>Attack of the Clones</li>
-                        <li>Revenger of the Sith</li>
+                        <li>Revenge of the Sith</li>
                     </ul>
             </nav>
         </div>
