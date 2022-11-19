@@ -1,5 +1,25 @@
 #bg-image {
     margin-left: 0px;
+    margin-top: 0px;
     width: 100%;
+    height: 100%;
+}
+.movie-buttons {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+}
+.movie-buttons li {
+    list-style: none;
+    }
+
+.movie-buttons img{
+    width: 100px;
     height: auto;
 }
+/* nav ul {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+} */
