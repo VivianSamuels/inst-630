@@ -1,13 +1,15 @@
 import React from 'react'
 import Data from '../data/script-data.json'
-import { LineChart, Line, BarChart, XAxis } from 'recharts'
-
+import './Menace.css';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 function Menance() {
     //get the data from the separate JSON file
     const rawData = Data.scripts;
     let epiOne = [];
     let graphData = [];
+    epiOne.forEach(cleanText);
+    epiOne.forEach(toGraphData);
 
 
     //push all dialogue data from episode 1 to an array
@@ -18,10 +20,7 @@ function Menance() {
         }
     }
 
-    //remove directions/cues
-    epiOne.forEach(cleanText);
-
-    function cleanText(data){
+      function cleanText(data){
         let c = "";
         let d = []
         if (data.line.includes("(")) {
@@ -52,24 +51,49 @@ function Menance() {
                 //if no character matches and reach the end, add a new entry
                 else if (graphData[j].character !== data.character && j === graphData.length-1){
                     graphData.push({character: data.character, words: data.line.length});
+                    //console.log(graphData);
                     break;
                 }
             }
         }
     }
 
-
+ 
+    epiOne.forEach(cleanText);
     epiOne.forEach(toGraphData);
-                                                     
+    const mostVocal = graphData.filter(element => element.words > 300)
+
+    const practice = [{name: "OBI-WAN", words: 295}, {name: "ANKAIN", words: 687}, {name:"JAR JAR", words: 380}];
+    console.log(mostVocal);                                            
 
         
- 
-    return(
-       <div className="m-wrapper">
-        {/* <BarChart width={100%} aspect={3} data={rawData}>
-            <XAxis datakey="character"/>
-        </BarChart> */}
-       </div>
-    )
+        return(
+            <div className="menace-container">
+                <BarChart
+                width={500}
+                height={300}
+                data={mostVocal}
+                margin={{
+                 top: 5,
+                 right: 30,
+                 left: 20,
+                bottom: 5
+                 }}
+                >
+                     <XAxis dataKey="character" />
+                     <YAxis />
+                     <Tooltip />
+                     <Legend />
+                     <Bar dataKey="words" fill="#8884d8" barSize={15}/>
+                    </BarChart>
+           {/* <ul>
+            <li>Here</li>
+            <li>we</li>
+            <li>go</li>
+            <li>again</li>
+           </ul> */}
+        </div>
+
+        )
 }
 export default Menance
