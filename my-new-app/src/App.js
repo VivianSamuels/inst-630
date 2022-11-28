@@ -1,14 +1,16 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Maincontent from './components/Maincontent'
-import Menace from './components/Menace'
+import Prequels from './components/Prequels'
+import Force from './components/Force'
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Maincontent />
-      <Menace />
+      <Prequels />
+      <Force />
     </div>
 
   );
