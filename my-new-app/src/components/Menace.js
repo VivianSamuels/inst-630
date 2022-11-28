@@ -8,9 +8,6 @@ function Menance() {
     const rawData = Data.scripts;
     let epiOne = [];
     let graphData = [];
-    epiOne.forEach(cleanText);
-    epiOne.forEach(toGraphData);
-
 
     //push all dialogue data from episode 1 to an array
     for (let i = 0; i<Object.keys(rawData).length; i++) {
@@ -20,7 +17,8 @@ function Menance() {
         }
     }
 
-      function cleanText(data){
+    //removes all dialogue directions & splits by whitespace  
+    function cleanText(data){
         let c = "";
         let d = []
         if (data.line.includes("(")) {
@@ -35,7 +33,6 @@ function Menance() {
     }
 
 
-
     function toGraphData(data){
         //if graphData is empty automatically add data
         if (graphData.length === 0){
@@ -46,12 +43,12 @@ function Menance() {
                 //when characters match, adjust word count
                 if (graphData[j].character === data.character){
                     graphData[j].words += data.line.length;
+                    //use breack because we're altering the length on each iteration
                     break;
                 }
                 //if no character matches and reach the end, add a new entry
                 else if (graphData[j].character !== data.character && j === graphData.length-1){
                     graphData.push({character: data.character, words: data.line.length});
-                    //console.log(graphData);
                     break;
                 }
             }
@@ -61,9 +58,10 @@ function Menance() {
  
     epiOne.forEach(cleanText);
     epiOne.forEach(toGraphData);
+    //isolate the characters who say more than 300 words
     const mostVocal = graphData.filter(element => element.words > 300)
 
-    const practice = [{name: "OBI-WAN", words: 295}, {name: "ANKAIN", words: 687}, {name:"JAR JAR", words: 380}];
+    
     console.log(mostVocal);                                            
 
         
@@ -86,12 +84,6 @@ function Menance() {
                      <Legend />
                      <Bar dataKey="words" fill="#8884d8" barSize={15}/>
                     </BarChart>
-           {/* <ul>
-            <li>Here</li>
-            <li>we</li>
-            <li>go</li>
-            <li>again</li>
-           </ul> */}
         </div>
 
         )
