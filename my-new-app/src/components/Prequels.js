@@ -1,14 +1,125 @@
 import React from 'react'
 import Data from '../data/script-data.json'
+import './Prequels.css';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-function Prequels(){
-    
-    //push all dialogue data from episode 2 to an array
+function Prequels() {
+    //get the data from the separate JSON file
+    const rawData = Data.scripts;
+    let prequelData = [];
+    let wordsData = [];
+    let forceCount = [];
+
+    //push all dialogue data from episode 1 to an array
     for (let i = 0; i<Object.keys(rawData).length; i++) {
         //first movie and dialogue lines only
-        if (rawData[i].episode ==< 2 & rawData[i].type === "dialogue"){
-            epiTwo.push(rawData[i])
+        if (rawData[i].episode <= 3 & rawData[i].type === "dialogue"){
+            prequelData.push(rawData[i])
         }
     }
+
+    //removes all dialogue directions & splits by whitespace  
+    function cleanText(data){
+        let c = "";
+        let d = []
+        if (data.line.includes("(")) {
+             c = data.line.replace(/ *\([^)]*\) */g, "");
+             d = c.split(" ");
+             data.line = d;
+        } else {
+            c = data.line
+            d = c.split(" ");
+            data.line = d;
+        }
+    }
+
+    function toWordsData(data){
+        //if wordsData is empty automatically add data
+        if (wordsData.length === 0){
+            wordsData.push({character: data.character, words: data.line.length});
+        //if wordsData does have data
+        } else if (wordsData.length > 0){
+            for (let j = 0; j<wordsData.length; j++){
+                //when characters match, adjust word count
+                if (wordsData[j].character === data.character){
+                    wordsData[j].words += data.line.length;
+                    //use breack because we're altering the length on each iteration
+                    break;
+                }
+                //if no character matches and reach the end, add a new entry
+                else if (wordsData[j].character !== data.character && j === wordsData.length-1){
+                    wordsData.push({character: data.character, words: data.line.length});
+                    break;
+                }
+            }
+        }
+    }
+
+    function toForceCount(data) {
+        let x = 0;
+        //if dialogue has the word force
+        if (data.line.includes("force") || data.line.includes("Force")){
+            //count the number of times it force is said
+            for (let i = 0; i < data.line.length; i++){
+                if (data.line[i] === "force" || data.line[i] === "Force"){
+                    x++;
+                }
+            }
+        }
+        //if force count is empty, push the data
+        if (forceCount.length === 0){
+            forceCount.push({character: data.character,force: x});
+        } else if (forceCount.length > 0) {
+            for (let j = 0; j<forceCount.length; j++){
+                //when characters match, adjust force count
+                if (forceCount[j].character === data.character){
+                    forceCount[j].force += x;
+                    //use breack because we're altering the length on each iteration
+                    break;
+                }
+                //if no character matches and reach the end, add a new entry
+                else if (forceCount[j].character !== data.character && j === forceCount.length-1){
+                    forceCount.push({character: data.character, force: x});
+                    break;
+                }
+            }
+        }
+    }
+
+ 
+    prequelData.forEach(cleanText);
+
+    //isolate the characters who say more than 300 words
+    prequelData.forEach(toWordsData);
+    const mostVocal = wordsData.filter(element => element.words > 300)
+
+    //isolating the number of times that force is said
+    prequelData.forEach(toForceCount);
+
+                                          
+
+        
+        return(
+            <div className="words-container">
+                <BarChart
+                width={800}
+                height={300}
+                data={mostVocal}
+                margin={{
+                 top: 5,
+                 right: 30,
+                 left: 20,
+                bottom: 5
+                 }}
+                >
+                     <XAxis dataKey="character" />
+                     <YAxis />
+                     <Tooltip />
+                     <Legend />
+                     <Bar dataKey="words" fill="#8884d8" barSize={15}/>
+                    </BarChart>
+            </div>
+
+        )
 }
 export default Prequels
