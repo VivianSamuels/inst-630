@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/inst-630-midterm/static/css/main.471055ef.css",
-    "main.js": "/inst-630-midterm/static/js/main.a29363df.js",
+    "main.css": "/inst-630-midterm/static/css/main.f29e4e4c.css",
+    "main.js": "/inst-630-midterm/static/js/main.9c0fb909.js",
     "static/js/787.587eed73.chunk.js": "/inst-630-midterm/static/js/787.587eed73.chunk.js",
-    "static/media/logo.svg": "/inst-630-midterm/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/AttackClones.jpg": "/inst-630-midterm/static/media/AttackClones.a8f633cda3378fec31c3.jpg",
+    "static/media/PhantomMenance.jpg": "/inst-630-midterm/static/media/PhantomMenance.20dfde93310130892e22.jpg",
+    "static/media/RevengeSith.jpg": "/inst-630-midterm/static/media/RevengeSith.22a6e25426c1ac38c7fc.jpg",
+    "static/media/space.png": "/inst-630-midterm/static/media/space.65f78a07ff7d8558cf90.png",
+    "static/media/starWarsLogo.png": "/inst-630-midterm/static/media/starWarsLogo.4a364a69d365b135ed85.png",
     "index.html": "/inst-630-midterm/index.html",
-    "main.471055ef.css.map": "/inst-630-midterm/static/css/main.471055ef.css.map",
-    "main.a29363df.js.map": "/inst-630-midterm/static/js/main.a29363df.js.map",
+    "main.f29e4e4c.css.map": "/inst-630-midterm/static/css/main.f29e4e4c.css.map",
+    "main.9c0fb909.js.map": "/inst-630-midterm/static/js/main.9c0fb909.js.map",
     "787.587eed73.chunk.js.map": "/inst-630-midterm/static/js/787.587eed73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.471055ef.css",
-    "static/js/main.a29363df.js"
+    "static/css/main.f29e4e4c.css",
+    "static/js/main.9c0fb909.js"
   ]
 }
