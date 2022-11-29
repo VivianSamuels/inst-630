@@ -5,6 +5,9 @@ import Maincontent from './components/Maincontent'
 import Prequels from './components/Prequels'
 import Force from './components/Force'
 
+//const aData = getData()
+
+const theData = cleanData()
 function getData() {
 
   const rawData = Data.scripts;
@@ -14,7 +17,7 @@ function getData() {
 }
 
 function cleanData() {
-  let cleanData =[];
+  let cleanData = [];
   const prequelData = getData();
   const freshData = prequelData.map(data => {
     if (data.line.includes("(")) {
@@ -27,7 +30,7 @@ function cleanData() {
     //return data;
 })
 
-return cleanData;
+  return cleanData;
 }
 
 function App() {
@@ -37,9 +40,10 @@ function App() {
       <Navbar />
       <Maincontent />
       <Prequels />
+      <Force />
     </div>
 
   );
 }
 
-export { App as default, cleanData}
+export { App as default, theData}
