@@ -8,18 +8,22 @@ import Force from './components/Force'
 //const aData = getData()
 
 const theData = cleanData()
-function getData() {
+// function getData() {
 
-  const rawData = Data.scripts;
-  const allData = rawData.filter(item => item.episode <= 3 && item.type === "dialogue");
+//   const rawData = Data.scripts;
+//   //const allData = rawData.filter(item => item.type === "dialogue")
+//   const allData = rawData.filter(item => item.episode <= 6 && item.type === "dialogue");
 
-  return allData;
-}
+//   return allData;
+// }
 
 function cleanData() {
   let cleanData = [];
-  const prequelData = getData();
-  const freshData = prequelData.map(data => {
+  //const prequelData = getData();
+  const rawData = Data.scripts;
+  //const allData = rawData.filter(item => item.type === "dialogue")
+  const allData = rawData.filter(item => item.episode <= 6 && item.type === "dialogue");
+  allData.map(data => {
     if (data.line.includes("(")) {
         data.line = data.line.replace(/ *\([^)]*\) */g, "");
         data.line = data.line.split(" ");
