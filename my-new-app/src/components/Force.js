@@ -1,6 +1,6 @@
 import React from 'react'
 import { theData } from '../App'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 function Force() {
@@ -18,34 +18,56 @@ function Force() {
             }
         }
         if (forceCount.length === 0){
-            forceCount.push({character: data.character,force: x})
+            //forceCount.push({character: data.character,force: x})
+            forceCount.push({movie: data.epsiode, force:x})
         } else if (forceCount.length > 0) {
             for (let j = 0; j<forceCount.length; j++) {
-                if(forceCount[j].character === data.character){
+                //if(forceCount[j].character === data.character){
+                if(forceCount[j].movie === data.episode){
                     forceCount[j].force += x;
                     break;
                 } else if (forceCount[j].character !== data.character && j === forceCount.length-1) {
-                    forceCount.push({character: data.character, force: x});
+                    //forceCount.push({character: data.character, force: x});
+                    forceCount.push({movie: data.episode, force: x});
                     break;
                 }
             }
         }
     }
+
+    function movieTitle(data){
+       if (data.movie === 1){
+        data.movie = "The Phantom Menace";
+       } else if (data.movie === 2){
+        data.movie = "Attack of the Clones";
+       } else if (data.movie === 3){
+        data.movie = "Revenge of the Sith";
+       } else if (data.movie === 4){
+        data.movie = "A New Hope";
+       } else if (data.movie === 5){
+        data.movie = "The Empire Strikes Backs";
+       } else if (data.movie === 6){
+        data.movie = "Return of the Jedi";
+       }
+    }
       
   
 
     allData.forEach(toForceCount)
-    //console.log(forceCount);
+    const finalForceCount = forceCount.filter(item => item.force > 0);
+    finalForceCount.forEach(movieTitle);
+
+   
  
                                           
 
         
         return(
             <div className="words-container">
-                <BarChart
-                width={800}
-                height={300}
-                data={forceCount}
+                <LineChart
+                width={1200}
+                height={800}
+                data={finalForceCount}
                 margin={{
                  top: 5,
                  right: 30,
@@ -53,12 +75,12 @@ function Force() {
                 bottom: 5
                  }}
                 >
-                     <XAxis dataKey="character" />
+                     <XAxis dataKey="movie" />
                      <YAxis />
                      <Tooltip />
                      <Legend />
-                     <Bar dataKey="force" fill="#8884d8" barSize={15}/>
-                    </BarChart>
+                     <Line type="monotone" dataKey="force" fill="#81FF07"/>
+                    </LineChart>
             </div>
 
         )
