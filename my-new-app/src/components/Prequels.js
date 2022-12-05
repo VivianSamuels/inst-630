@@ -208,13 +208,7 @@ function Prequels() {
     
     //isolating the characters who spoke the most
     allData.forEach(toWord);
-    //toWord(allData[108]);
-    //epiThree.forEach(toWordOne);
-    //const mostVocal = wordCount.filter(element => element.words > 300)
-   //toWord(epiTwo[70]);
-    //console.log(allData[108]);
-    // console.log(allData[108].line.length);
-    // console.log(epiTwo[70].line.length);
+  
     console.log(wordCount);
     const mostVocal = wordCount.filter(item => item.episodeOne + item.episodeTwo + item.episodeThree + item.episodeFour + item.episodeFive + item.episodeSix > 1000);
         return(
