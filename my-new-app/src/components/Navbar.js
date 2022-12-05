@@ -8,11 +8,11 @@ function Navbar() {
         <div className="nav-container">
             <nav>
                 <div id="logo"><img src={Logo} alt="Star Wars Logo"/> </div>
-                    <ul className ="nav-buttons">
+                    {/* <ul className ="nav-buttons">
                         <li>The Phantom Menace</li>
                         <li>Attack of the Clones</li>
                         <li>Revenge of the Sith</li>
-                    </ul>
+                    </ul> */}
             </nav>
         </div>
     )

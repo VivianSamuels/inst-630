@@ -2,20 +2,11 @@ import React from 'react'
 import Data from './data/script-data.json'
 import Navbar from './components/Navbar'
 import Maincontent from './components/Maincontent'
-import Prequels from './components/Words'
+import Words from './components/Words'
 import Force from './components/Force'
-
-//const aData = getData()
+import Planets from './components/Planets'
 
 const theData = cleanData()
-// function getData() {
-
-//   const rawData = Data.scripts;
-//   //const allData = rawData.filter(item => item.type === "dialogue")
-//   const allData = rawData.filter(item => item.episode <= 6 && item.type === "dialogue");
-
-//   return allData;
-// }
 
 function cleanData() {
   let cleanData = [];
@@ -30,9 +21,7 @@ function cleanData() {
         cleanData.push(data);
     } else { data.line = data.line.split(" ");
       cleanData.push(data)}
-
-    //return data;
-})
+    })
 
   return cleanData;
 }
@@ -43,8 +32,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Maincontent />
-      <Prequels />
+      <Words />
       <Force />
+      <Planets />
     </div>
 
   );
