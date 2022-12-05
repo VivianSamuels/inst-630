@@ -2,7 +2,7 @@ import React from 'react'
 import Data from './data/script-data.json'
 import Navbar from './components/Navbar'
 import Maincontent from './components/Maincontent'
-import Prequels from './components/Prequels'
+import Prequels from './components/Words'
 import Force from './components/Force'
 
 //const aData = getData()
