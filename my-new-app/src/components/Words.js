@@ -6,7 +6,7 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 function Prequels() {
     //import data from App.js
-    const allData = theData;
+    //const allData = theData;
 
 
     //empty array for word count data
@@ -17,7 +17,7 @@ function Prequels() {
         //if the array is empty
         if (wordCount.length === 0){
             //add the very first entry
-            wordCount.push({character: data.character, episodeOne: data.line.length, episodeTwo: 0, episodeThree: 0, episodeFour: 0, episodeFive: 0, episodeSix: 0});
+            wordCount.push({character: data.character, episodeOne: data.line.length, episodeTwo: 0, episodeThree: 0,});
         } else if (wordCount.length > 0){
             //for each key/value in the array
             for (let j = 0; j<wordCount.length; j++){
@@ -32,36 +32,38 @@ function Prequels() {
                     } else if (data.episode === 3){
                         wordCount[j].episodeThree += data.line.length;
                         break;
-                    } else if (data.episode === 4){
-                        wordCount[j].episodeFour += data.line.length;
-                        break;
-                    } else if (data.episode === 5){
-                        wordCount[j].episodeFive += data.line.length;
-                        break;
-                    } else if (data.episode === 6){
-                        wordCount[j].episodeSix += data.line.length;
-                        break;
-                    }   
+                    }
+                    // } else if (data.episode === 4){
+                    //     wordCount[j].episodeFour += data.line.length;
+                    //     break;
+                    // } else if (data.episode === 5){
+                    //     wordCount[j].episodeFive += data.line.length;
+                    //     break;
+                    // } else if (data.episode === 6){
+                    //     wordCount[j].episodeSix += data.line.length;
+                    //     break;
+                    // }   
                 } else if (wordCount[j].character !== data.character && j === wordCount.length-1){
                         if (data.episode === 1 ){
-                            wordCount.push({character: data.character, episodeOne: data.line.length, episodeTwo: 0, episodeThree: 0, episodeFour: 0, episodeFive: 0, episodeSix: 0});
+                            wordCount.push({character: data.character, episodeOne: data.line.length, episodeTwo: 0, episodeThree: 0});
                             break;
                         } else if (data.episode === 2){
-                            wordCount.push({character: data.character, episodeOne: 0, episodeTwo: data.line.length, episodeThree: 0, episodeFour: 0, episodeFive: 0, episodeSix: 0});
+                            wordCount.push({character: data.character, episodeOne: 0, episodeTwo: data.line.length, episodeThree: 0});
                             break;
                         } else if (data.episode === 3){
-                            wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: data.line.length, episodeFour: 0, episodeFive: 0, episodeSix: 0});
-                            break;
-                        } else if (data.episode === 4){
-                            wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: 0, episodeFour: data.line.length, episodeFive: 0, episodeSix: 0});
-                            break;
-                        } else if (data.episode === 5){
-                            wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: 0, episodeFour: 0, episodeFive: data.line.length, episodeSix: 0});
-                            break;
-                        } else if (data.episode === 6){
-                            wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: 0, episodeFour: 0, episodeFive: 0, episodeSix: data.line.length});
+                            wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: data.line.length});
                             break;
                         }
+                        // } else if (data.episode === 4){
+                        //     wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: 0, episodeFour: data.line.length, episodeFive: 0, episodeSix: 0});
+                        //     break;
+                        // } else if (data.episode === 5){
+                        //     wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: 0, episodeFour: 0, episodeFive: data.line.length, episodeSix: 0});
+                        //     break;
+                        // } else if (data.episode === 6){
+                        //     wordCount.push({character: data.character, episodeOne: 0, episodeTwo: 0, episodeThree: 0, episodeFour: 0, episodeFive: 0, episodeSix: data.line.length});
+                        //     break;
+                        // }
                     
                 }
             }
@@ -85,13 +87,13 @@ function Prequels() {
      }
     
     //isolating the characters who spoke the most
-    allData.forEach(toWord);
-    const mostVocal = wordCount.filter(item => item.episodeOne + item.episodeTwo + item.episodeThree + item.episodeFour + item.episodeFive + item.episodeSix > 1000);
+    theData.forEach(toWord);
+    const mostVocal = wordCount.filter(item => item.character === "OBI-WAN" || item.character === "PADMÉ" || item.character === "ANAKIN");
         return(
             <div className="prequels-container">
                 {/*<ResponsiveContainer width="100%" height="100%">*/}
                 <BarChart
-                width={1200}
+                width={500}
                 height={800}
                 data={mostVocal}
                 //layout="vertical" barCategoryGap={1}
@@ -106,12 +108,9 @@ function Prequels() {
                      <YAxis />
                      <Tooltip />
                      <Legend />
-                     <Bar dataKey="episodeOne" fill="#FF0707"/>
-                     <Bar dataKey="episodeTwo" fill="#FFBB07"/> 
-                     <Bar dataKey="episodeThree" fill="FFED07"/>
-                     <Bar dataKey="episodeFour" fill="#81FF07"/>
-                     <Bar dataKey="episodeFive" fill="#07FFBB"/>
-                     <Bar dataKey="episodeSix" fill="#07ACFF"/>
+                     <Bar dataKey="episodeOne" stackId="a" fill="#FF0707"/>
+                     <Bar dataKey="episodeTwo" stackId="a" fill="#FFBB07"/> 
+                     <Bar dataKey="episodeThree" stackId="a" fill="FFED07"/>
                     </BarChart>
                 {/*</ResponsiveContainer>*/}
             </div>
