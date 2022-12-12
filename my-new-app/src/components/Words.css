@@ -1,5 +1,49 @@
-.prequel-container {
+.words-container {
+    background-color:black;
+    padding-top: 2%;
+    padding-left: 6%;
+    padding-right: 0%;
+    padding-bottom: 9%;
+    margin-top: -25px;
+    font-family: "Ubuntu";
+    color: #b7b722;
+}
+.words-info{
+   background-color: black;
+   max-width: 80%;
+}
+
+.all-charts {
+    padding-left: 35px;
+    background-color:black;
+    display: flex;
+    width: max-content;
+    justify-content: space-evenly;
+}
+
+.word-graph-wrapper{
+    background-color: white;
+    border-radius: 5px;
+    height: max-content;
+}
+
+.word-graph-wrapper h2 {
+    color: black;
+    text-align:  center;
+}
+
+.force-wrapper {
+    background: white;
+    border-radius: 5px;
+    height: max-content
+}
+
+.force-wrapper h2{
     text-align: center;
-    font-size: 14px;
-    margin-top: 15px;
+    color: black;
+}
+
+.space{
+    background-color: black;
+    width: 100px;
 }
