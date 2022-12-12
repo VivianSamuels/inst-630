@@ -1,0 +1,29 @@
+.appear-container {
+    background-color: black;
+    padding-top: 2%;
+    padding-left: 6%;
+    padding-right: 0%;
+    padding-bottom: 9%;
+    margin-top: -25px;
+    font-family: "Ubuntu";
+    color: #b7b722;
+    display: flex;
+}
+
+.appear-text{
+    max-width: 40%x;
+
+}
+
+.appear-charts {
+    background-color: white;
+    border-radius: 5px;
+    height: max-content;
+    max-width: max-content;
+}
+.appear-charts h2 {
+    color: black;
+    text-align: center;
+}
+
+
