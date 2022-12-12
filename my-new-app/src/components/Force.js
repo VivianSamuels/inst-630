@@ -52,15 +52,6 @@ function Force() {
                 y++;
             }
         }
-        
-
-        // if (data.line.includes("Padme") || data.line.includes("padme") || data.line.includes("PADMÉ") || data.line.includes("Padmé") || data.line.include("Amidala") || data.line.includes("Queen")){
-        //     for (let i = 0; i < data.line.length; i++) {
-        //         if (data.line[i] === "Padme" || data.line[i] === "padme" || data.line[i] === "PADMÉ" || data.line[i] === "Padmé" || data.line[i] === "Amidala" || data.line[i] === "Queen"){
-        //             y++;
-        //         }
-        //     }
-        // }
 
         for (let j = 0; j<forceCount.length; j++) {
             //if(forceCount[j].character === data.character){
@@ -68,13 +59,7 @@ function Force() {
                     forceCount[j].force += x;
                     forceCount[j].Padme += y;
                     //break;
-                } 
-                // else if (forceCount[j].character !== data.character && j === forceCount.length-1) {
-                //     //forceCount.push({character: data.character, force: x});
-                //     forceCount.push({movie: data.episode, force: x, Padme: y});
-                //     break;
-                // }
-                
+                }
             }
         
     }
@@ -111,7 +96,7 @@ function Force() {
             <div className="words-container">
                 <LineChart
                 width={500}
-                height={800}
+                height={300}
                 data={finalForceCount}
                 margin={{
                  top: 5,
