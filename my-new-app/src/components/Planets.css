@@ -1,0 +1,31 @@
+.planets-container {
+    background-color: black;
+    padding-top: 2%;
+    padding-left: 6%;
+    padding-right: 0%;
+    padding-bottom: 9%;
+    margin-top: -25px;
+    font-family: "Ubuntu";
+    color: #b7b722;
+    display: flex;
+}
+
+.location-wrapper {
+    background-color: white;
+    width: max-content;
+    height: 100%;
+    border-radius: 5px;
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.location-wrapper h2 {
+    color: black;
+    text-align: center;
+}
+
+.planet-info {
+    width: 50%;
+    padding: 20px;
+
+}

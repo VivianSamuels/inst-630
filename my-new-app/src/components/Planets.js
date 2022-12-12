@@ -1,206 +1,119 @@
 import React from 'react';
 import { theData } from '../App';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import './Planets.css';
+import { AreaChart, Area, XAxis, YAxis, ZAxis, PieChart, Pie, Sector, CartesianGrid, Tooltip, Cell, ResponsiveContainer } from 'recharts';
+
 
 
 function Planets() {
-    let locations = [];
-    let phantomMenace = [{planet: "Coruscant", value: 0}, {planet: "Naboo", value: 0}, {planet: "Space", value: 0}, {planet: "Tatooine", value: 0}]
-    let clones = [{planet:"Coruscant" , value: 0}, {planet: "Geonosis" , value: 0}, {planet: "Kamino", value: 0}, {planet: "Nabbo", value: 0}, {planet:"Space", value: 0}, {planet:"Tatooine", value: 0}]
-   
-    let sith = 
-    [{planet: "Coruscant", value: 0}, {planet: "Felucia", value: 0}, 
-    {planet: "Kashyyyk", value: 0}, {planet: "Mustafar", value: 0}, 
-
-    {planet: "Mygeeto", value: 0}, {planet: "Polis_Massa", value: 0}, 
-    {planet: "Space", value: 0}, {planet: "Utapau", value: 0}]
-
-    let finalLocations = [
-        {movie: "The Phantom Menace",
-        Coruscant: 0,
-        Naboo: 0,
-        Space: 0,
-        Tatooine: 0,},
-        {movie: "Attack of the Clones",
-        Coruscant: 0,
-        Geonosis: 0,
-        Kamino: 0,
-        Naboo: 0,
-        Space: 0,
-        Tatooine: 0},
-        {movie: "Revenge of the Sith",
-        Coruscant: 0,
-        Felucia: 0,
-        Kashyyyk: 0,
-        Mustafar: 0,
-        Mygeeto: 0,
-        Naboo: 0,
-        Polis_Massa: 0,
-        Saleucami: 0,
-        Space: 0,
-        Tatooine: 0,
-        Utapau: 0,}
-        ];
-
-    const testing = [{planet: "Naboo", episode1: 411, episode2: 650},
-];
+    
+    let data = [
+        {planet: "Coruscant", movie1: 0 , movie2: 0, movie3: 0}, 
+        {planet: "Geonosis", movie1: 0, movie2: 0, movie3: 0},
+        {planet: "Kamino", movie1: 0, movie2: 0, movie3: 0},
+        {planet: "Kashyyyk", movie1: 0 , movie2: 0, movie3: 0},
+        {planet: "Mustafar", movie1: 0 , movie2: 0, movie3: 0},
+        {planet: "Naboo", movie1: 0 , movie2: 0, movie3: 0},
+        {planet: "Polis Massa", movie1: 0 , movie2: 0, movie3: 0},
+        {planet: "Space", movie1: 0 , movie2: 0, movie3: 0},
+        {planet: "Tatooine", movie1: 0 , movie2: 0, movie3: 0},
+        {planet: "Utapau", movie1: 0 , movie2: 0, movie3: 0},
+    ]
 
     for (let i = 0; i < theData.length; i++){
         if (theData[i].episode === 1){
             //if (theData[i].scene.location === "")
             //the scene takes place on Tatooine
             if (theData[i].scene.location === "TATOOINE" || theData[i].scene.location === "MOS ESPA" || theData[i].scene.location.includes("WATTO") || theData[i].scene.location.includes("ANAKIN") || theData[i].scene.location.includes("SLAVE")){
-                finalLocations[0].Tatooine++;
-                phantomMenace[3].value++;
+                data[8].movie1++
             } else if (theData[i].scene.location.includes("PALPATINE") || theData[i].scene.location === "CORUSCANT" || theData[i].scene.location.includes("JEDI")){
-                finalLocations[0].Coruscant++;
-                phantomMenace[0].value++;
+                data[0].movie1++
             } else if (theData[i].scene.location === "SPACE"){
-                finalLocations[0].Space++;
-                phantomMenace[2].value++;
+                data[7].movie1++
             } else {
-                finalLocations[0].Naboo++;
-                phantomMenace[1].value++;
+                //Naboo
+                data[5].movie1++
             }
             
         } else if (theData[i].episode === 2){
             if (theData[i].scene.location.includes("CORUSCANT") || theData[i].scene.location.includes("SENATE") || theData[i].scene.location.includes("CHANCELLOR") || theData[i].scene.location.includes("JEDI") || theData[i].scene.location.includes("NIGHTCLUB") || theData[i].scene.location.includes("ENTERTAINMENT")){
-                finalLocations[1].Coruscant++;
-                clones[0].value++;
+                data[0].movie2++
             } else if (theData[i].scene.location.includes("NABOO") || theData[i].scene.location.includes("THEED") || theData[i].scene.location.includes("PADME") || theData[i].scene.location.includes("NAOO")){
-                finalLocations[1].Naboo++;
-                clones[3].value++;
+                data[5].movie2++
             } else if (theData[i].scene.location.includes("GEONOSIS") || theData[i].scene.location.includes("GUNSHIP")){
-                finalLocations[1].Geonosis++;
-                clones[1].value++;
+                data[1].movie2++
             } else if (theData[i].scene.location.includes("TATOOINE") || (theData[i].scene.location.includes("TUSKEN"))){
-                finalLocations[1].Tatooine++;
-                clones[5].value++;
+                data[9].movie2++
             } else if (theData[i].scene.location.includes("TIPOCA")){
-                finalLocations[1].Kamino++;
-                clones[2].value++;
+                data[2].movie2++;
             } else if (theData[i].scene.location.includes("STARFREIGHTER")){
-                finalLocations[1].Space++;
-                clones[4].value++;
+                data[7].movie2++;
             }
         } else if (theData[i].episode === 3){
             if (theData[i].scene.location.includes("CORUSCANT") || theData[i].scene.location.includes("SENATE") || theData[i].scene.location.includes("JEDI")){
-            //|| theData[i].scene.location.includes("SENATE") || theData[i].scene.location.includes("CHANCELLOR") || theData[i].scene.location.includes("JEDI") || theData[i].scene.location.includes("NIGHTCLUB") || theData[i].scene.location.includes("ENTERTAINMENT")){
-                finalLocations[2].Coruscant++;
-                sith[0].value++;
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
+                data[0].movie3++;
             } else if (theData[i].scene.location.includes("UTAPAU")){
-            //|| theData[i].scene.location.includes("THEED") || theData[i].scene.location.includes("PADME") || theData[i].scene.location.includes("NAOO")){
-                finalLocations[2].Utapau++;
-                sith[7].value++;
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
-            } else if (theData[i].scene.location.includes("MYGEETO")){
-            //|| theData[i].scene.location.includes("GUNSHIP")){
-                finalLocations[2].Mygeeto++;
-                sith[4].value++
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
-            } else if (theData[i].scene.location.includes("FELUCIA")){
-            //|| (theData[i].scene.location.includes("TUSKEN"))){
-                finalLocations[2].Felucia++;
-                sith[1].value++;
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
+                data[9].movie3++; 
             } else if (theData[i].scene.location.includes("KASHYYYK")){
-                finalLocations[2].Kashyyyk++;
-                sith[2].value++
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
+                data[3].movie3++;
             } else if (theData[i].scene.location.includes("MUSTAFAR")){
-                finalLocations[2].Mustafar++;
-                sith[3].value++;
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
+                data[4].movie3++;
             }  else if (theData[i].scene.location.includes("POLIS")){
-                finalLocations[2].Polis_Massa++;
-                sith[5].value++
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
+                data[6].movie3++;
             } else {
-                finalLocations[2].Space++;
-                sith[6].value++
-                if (!locations.includes(theData[i].scene.location)){
-                    locations.push(theData[i].scene.location)
-                }
-            } 
-
-                // if (!locations.includes(theData[i].scene.location)){
-                //     locations.push(theData[i].scene.location)
-                // }
-            
+                //space
+                data[7].movie3++;
+            }             
         } 
     }
 
-    //console.log(finalLocations);
-    for (let i = 0; i < theData.length; i++){
-        if (theData[i].episode === 3){
-                if(!locations.includes(theData[i].scene.location)){
-                    //locations.push(theData[i].scene.location);
-                console.log(theData[i].scene.location);
-                //console.log(theData[i]);
-                }            
-            
-        }
-    }
-
-    function getPercent(a){
-        let x = 0;
-        for (let i = 0; i<a.length; i++){
-            x += a[i].value; 
-            a.push({total: x});
-        }
-
-    }
     
-    getPercent(phantomMenace);
-    console.log(phantomMenace);
-    console.log(phantomMenace[phantomMenace.length-1]);
-    //console.log(clones);
-    //console.log(sith);
-    //console.log(finalLocations);
-
-//    const data = [{planet: "Tatooine", value: 400},{planet: "Naboo", value: 750}, {planet: "Coruscant", value: 250}]
-//    console.log(data);
-//    //data[0].value = (data[0].value/(data[0].value + data[1].value + data[2].value)) * 100
-//     data.push({total: data[0].value + data[1].value + data[2].value})
-
-//    const f = data.map(d => d.value = data[(d.value/(data[0].value + data[1].value + data[2].value)) * 100 )
-//   // data[0].value = (data[0].value/(data[0].value + data[1].value + data[2].value + data[3].value)) *100 ));
-//     console.log(data);
-
 
     return (
-      <PieChart width={400} height={400}>
-        <Pie
-            data={phantomMenace}
-            dataKey="value"
-            // cx={120}
-            // cy={200}
-            cx="50%"
-            cy="50%"
-            //innerRadius={60}
-            outerRadius={150}
-            fill="#8884d8"
-            label
-            //paddingAngle={3}
-            >
+     <div  className='planets-container'>
+        <div className='location-wrapper'>
+            <h2>Where Star Wars took Place</h2>
+        <AreaChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+            <defs>
+                <linearGradient id="colorMovie1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#892158" stopOpacity={0.1}/>
+                    <stop offset="95%" stopColor="#892158" stopOpacity={0}/>
+                </linearGradient>
+                <linearGradient id="colorMovie2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#F1CA61" stopOpacity={0.1}/>
+                    <stop offset="95%" stopColor="#F1CA61" stopOpacity={0}/>
+                </linearGradient>
+                <linearGradient id="colorMovie3" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#F45D3D" stopOpacity={0.9}/>
+                    <stop offset="95%" stopColor="#F45D3D" stopOpacity={0}/>
+                </linearGradient>
+            </defs>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="planet" tick={{ fontSize: 10}} />
+          <YAxis label={{ value: "number of actions", angle: -90, position: 'insideLeft' }}/>
+          <YAxis />
+          <Tooltip />
+          <Area type="monotone" dataKey="movie1" name= "The Phantom Menace" stackId="1" stroke="#892158" fill="#892158" />
+          <Area type="monotone" dataKey="movie2" name= "Attack of the Clones" stackId="1" stroke="#F1CA61" fill="#F1CA61" />
+          <Area type="monotone" dataKey="movie3" name= "Revenge of the Sith" stackId="1" stroke="#F45D3D" fill="#F45D3D" />
+        </AreaChart>
+        </div>
+        <div className='planet-info'>
+            <h1>Naboo or Bust</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
 
-        </Pie>
-      </PieChart>
     )
 }
 
