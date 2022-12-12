@@ -83,7 +83,7 @@ function Appear() {
         <div className="appear-container">
           <div className='appear-text'>
                 <h1>Screen Time</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Padme is once again carrying Star Wars on her back. She is all over most of the movies. Her screen presence is hard to ignore and always used to develop the story. She has one of the highest screen times and always seems to pop up during major plot points. In fact, in Episode 3, where she has less screen time than other movies, she is used prominently in flashbacks and as images of the future that are not accounted for in the script (since she isn’t actually talking during those moments). Visions of Padme’s pregnancy is literally the reason why Anakin goes super emo and becomes Darth Vader. Needless to say, she is both an iconic character and the main character</p>
                 </div>
           <div className="appear-charts"> 
           <h2>Appearance in Script</h2>

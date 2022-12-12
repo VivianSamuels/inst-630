@@ -11,7 +11,7 @@ function Maincontent () {
         <div className="main-container">
             <div className="main-info">
             <h1>Who is Padme?</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Padme Amidala is the main character of th Star War Prequels. Here's why!</p>
                 </div>
             <div className="padme">
             <img src={Padme} alt="Padme Amidala looking apprehensively at something out of frame"/>    

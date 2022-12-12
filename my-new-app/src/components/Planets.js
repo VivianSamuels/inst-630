@@ -110,8 +110,8 @@ function Planets() {
         </div>
         <div className='planet-info'>
             <h1>Naboo or Bust</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+            <p>The second most seen world in the Star Wars Prequels is Naboo. This is because Padme is the main character. The entire first movie is about saving Naboo, and in doing so, beginning a series of events such as Anakin being discovered by the Jedi, the slow and careful buried seeds of war by Palpatine, and the transition of Padme leaving her Queendom to become a Senator. No other planet besides Coruscant, which houses the Jedi and the Republic, ever sees this much action.The fact that it is the second most visited planet in two out of the three prequels solely because Padme is there is proof that she is definitely the driving force behind all actions in the prequels.</p>
+            </div>
       </div>
 
     )

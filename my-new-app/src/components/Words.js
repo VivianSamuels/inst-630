@@ -150,7 +150,7 @@ function Prequels() {
             <div className="words-container">
                 <div className='words-info'>
                     <h1>Chatter Box</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>On top of her planet being highlighted numerous times, is one of the characters with the most dialogue, second only to Anakin. She doesn’t have grand monologues or placeholder sounds like some other characters either. Her dialogue pushes the plot forward. Her actions in Episode 1 pave the way for the Jedi to find Anakin and she is quite literally the entire plot of Episode 2, with her dodging numerous attempts on her life. Every time Padme speaks, she is revealing something or probing for information necessary to continue the story. Padem is so influential that other characters can’t stop talking about her! She is referenced by other characters more than they use the word “force”, which is a pretty big deal because the Force is the entire magical juju that the entire series relies on.  Only main characters get that kind of treatment.</p>
                 </div>
 
                 <div className='all-charts'>
