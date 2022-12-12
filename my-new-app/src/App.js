@@ -5,6 +5,7 @@ import Maincontent from './components/Maincontent'
 import Words from './components/Words'
 import Force from './components/Force'
 import Planets from './components/Planets'
+import Appear from './components/Appear'
 
 const theData = cleanData()
 
@@ -32,9 +33,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Maincontent />
-      <Words />
-      <Force />
       <Planets />
+      <Words />
+      <Appear />
+      
     </div>
 
   );
