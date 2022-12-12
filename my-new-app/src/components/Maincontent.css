@@ -1,25 +1,42 @@
-#bg-image {
-    margin-left: 0px;
-    margin-top: 0px;
-    width: 100%;
-    height: 100%;
-}
-.movie-buttons {
+.main-container{
+    /* padding: 10px; */
+    padding-top: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 9%;
+    background-color:black;
+    color: #b7b722;
+    font-family: "Ubuntu";
+    height:max-content;
     display: flex;
     align-items: center;
-    height: 80px;
-    justify-content: space-between;
 }
-.movie-buttons li {
-    list-style: none;
-    }
 
-.movie-buttons img{
-    width: 100px;
-    height: auto;
+.main-info {
+    width:50%;
 }
-/* nav ul {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-} */
+
+.main-info h1 {
+    color: #b7b722;
+    font-family: "Ubuntu";
+    padding-right: 50%;
+    
+}
+.main-info p {
+    color: #b7b722;
+}
+
+
+.padme {
+    justify-content: center;
+    width: 300px;
+}
+
+.padme img{
+    height: auto;
+    max-width: 200;
+    
+}
+
+
+
